@@ -1,0 +1,1 @@
+export const productNotFound = ({ product }) => product.notFound;

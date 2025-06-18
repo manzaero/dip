@@ -1,0 +1,1 @@
+export const selectSearchProduct = (state) => state.search.searchProduct

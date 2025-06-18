@@ -1,0 +1,1 @@
+export const selectLoadProducts = (state) => state.products.items

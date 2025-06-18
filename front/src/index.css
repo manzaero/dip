@@ -1,0 +1,82 @@
+@font-face {
+    font-family: "CeraPro";
+    src: url("./assets/fonts/CeraPro-Light.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: "CeraPro", sans-serif;
+    background-color: #ffffff;
+}
+
+* {
+    list-style-type: none;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+html,
+body,
+#root {
+    height: 100%;
+    margin: 0;
+}
+
+:root {
+    --arrow-bg: rgba(255, 255, 255, 0.3);
+    --arrow-icon: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg);
+    --option-bg: white;
+    --select-bg: rgba(255, 255, 255, 0.2);
+    --hover-bg: rgba(255, 255, 255, 0.4);
+    --focus-shadow: rgba(70, 163, 88, 0.4);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+select {
+    appearance: none;
+    border: 0;
+    outline: 0;
+    font: inherit;
+    width: 20rem;
+    padding: 1rem 4rem 1rem 1rem;
+    background: var(--arrow-icon) no-repeat right 0.8em center / 1.4em,
+    linear-gradient(to left, var(--arrow-bg) 3em, var(--select-bg) 3em);
+    color: #46A358;
+    border-radius: 0.5em;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+
+    &::-ms-expand {
+        display: none;
+    }
+
+    &:hover {
+        background: var(--arrow-icon) no-repeat right 0.8em center / 1.4em,
+        linear-gradient(to left, var(--arrow-bg) 3em, var(--hover-bg) 3em);
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 8px var(--focus-shadow);
+        transform: scale(1.02);
+    }
+
+    option {
+        color: inherit;
+        background-color: var(--option-bg);
+    }
+}
