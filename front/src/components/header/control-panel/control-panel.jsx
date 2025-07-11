@@ -113,4 +113,18 @@ export const ControlPanel = styled(ControlPanelContainer)`
             padding: 8px 0 0 4px;
         }
     }
+    @media (max-width: 1200px) {
+        .control-input-form {
+            margin-right: 15px;
+        }
+
+        .control-cart {
+            margin-right: 20px;
+        }
+    }
+    @media (max-width: 768px) {
+        .control-input-form {
+            width: 300px;
+        }
+    }
 `

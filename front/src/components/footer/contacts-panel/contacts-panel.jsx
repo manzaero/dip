@@ -48,4 +48,7 @@ export const ContactsPanel = styled(ContactsPanelContainer)`
         align-items: center;
         gap: 10px;
     }
+    @media (max-width: 1200px) {
+        grid-template-columns: repeat(4, 1fr)
+    }
 `

@@ -49,4 +49,17 @@ export const Links = styled(LinksContainer)`
 
         }
     }
+    @media (max-width: 1200px) {
+        width: 100%;
+        padding-left: 200px;
+        ul {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    @media (max-width: 768px) {
+        width: 100%;
+        ul {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
 `

@@ -20,4 +20,21 @@ export const Header = styled(HeaderContainer)`
     border-bottom: 1px solid #46A35880;
     padding-bottom: 25px;
     width: 100%;
+    @media (max-width: 1200px) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 40px;
+        margin-top: 20px;
+        border-bottom: 1px solid #46A35880;
+        padding-bottom: 20px;
+        width: 100%;
+    }
+    @media (max-width: 768px) {
+        margin-top: 15px;
+        border-bottom: 1px solid #46A35880;
+        padding-bottom: 10px;
+        width: 100%;
+        height: auto;
+    }
 `

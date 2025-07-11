@@ -61,7 +61,7 @@ const ProductContainer = ({ className }) => {
             <div className="product-img">
                 <img src={image} alt="product image" />
             </div>
-            <div>
+            <div className="product-cart">
                 <div className="title">
                     <p className="product-name">{selectedProduct.name}</p>
                     <div className="product-stock">
@@ -94,13 +94,16 @@ const ProductContainer = ({ className }) => {
 
 export const Product = styled(ProductContainer)`
     display: flex;
-
     .product-img {
         width: 400px;
         height: 400px;
         margin-right: 75px;
     }
 
+    .product-cart {
+        flex: 1 1 100%;
+    }
+    
     .product-stock {
         display: flex;
         justify-content: space-between;
@@ -176,6 +179,75 @@ export const Product = styled(ProductContainer)`
         &:hover {
             background: #d6ffd6;
             color: #46A358;
+        }
+    }
+    @media (max-width: 1200px) {
+        .product-img {
+            width: 350px;
+            margin-right: 40px;
+        }
+
+        .product-name {
+            font-size: 24px;
+        }
+
+        .product-price {
+            font-size: 20px;
+        }
+
+        .description-title {
+            font-size: 14px;
+        }
+
+        .description-text {
+            font-size: 16px;
+        }
+
+        .buy-btn {
+            width: 120px;
+            height: 35px;
+        }
+    }
+    @media (max-width: 768px) {
+        flex-direction: column;
+        .product-img {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            height: auto;
+            margin-right: 0;
+            margin-bottom: 20px;
+
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+
+        .product-cart {
+            padding: 0 16px;
+        }
+
+        .product-stock {
+            justify-content: center;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .product-buy {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .buy-btn {
+            width: 100%;
+            max-width: 200px;
+            margin-top: 12px;
+            margin-left: 0;
+        }
+
+        .hr {
+            margin-top: 24px;
         }
     }
 `

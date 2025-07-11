@@ -145,11 +145,15 @@ const MainContainer = ({className}) => {
 
 export const Main = styled(MainContainer)`
     display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
 
     .main-categories {
-        min-width: 310px;
-        height: 100%;
-        background-color: #FBFBFB;
+        width: 310px;
+        flex-shrink: 0;
+        background-color: #fbfbfb;
         padding: 18px;
 
         p {
@@ -174,32 +178,63 @@ export const Main = styled(MainContainer)`
     }
 
     .main-cards {
-        margin: 0 0 100px 50px;
+        flex: 1;
+        padding: 0 32px;
+        margin-bottom: 100px;
+
+        select {
+            margin-bottom: 24px;
+        }
 
         .cards {
             display: grid;
-            grid-template-columns: auto auto auto;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
         }
 
         .card {
-            width: 260px;
-            height: 300px;
-            margin: 70px 32px 0 0;
+            width: 100%;
+            max-width: 260px;
             border: solid 1px #eeeeee;
+            padding: 12px;
+            box-sizing: border-box;
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
 
             img {
-                width: 250px;
-                height: 250px;
-                margin: 30px 4px;
+                width: 100%;
+                max-height: 200px;
+                object-fit: contain;
+                margin-bottom: 12px;
+            }
+
+            .product-description {
+                text-align: center;
+
+                .product-name {
+                    font-weight: bold;
+                    font-size: 16px;
+                    margin-bottom: 6px;
+                }
+
+                .product-price {
+                    color: #46a358;
+                    font-size: 16px;
+                }
+            }
+
+            &:hover {
+                transform: scale(1.05);
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+                border-top: 1px solid #46a358;
             }
         }
 
-        .card:hover {
-            transform: scale(1.05);
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
-            border-top: 1px solid #46A358;
-        }
+
         .pagination {
             margin-top: 100px;
             display: flex;
@@ -209,32 +244,59 @@ export const Main = styled(MainContainer)`
             font-weight: 300;
             font-size: 16px;
             color: #333;
-        }
 
-        .pagination button {
-            background-color: #46A358;
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
+            button {
+                background-color: #46a358;
+                color: white;
+                border: none;
+                padding: 8px 16px;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
 
-        .pagination button:disabled {
-            background-color: #ccc;
-            cursor: default;
-            color: #666;
-        }
+                &:disabled {
+                    background-color: #ccc;
+                    cursor: default;
+                    color: #666;
+                }
 
-        .pagination button:not(:disabled):hover {
-            background-color: #3a8c49;
-        }
+                &:not(:disabled):hover {
+                    background-color: #3a8c49;
+                }
+            }
 
-        .pagination span {
-            min-width: 100px;
-            text-align: center;
+            span {
+                min-width: 100px;
+                text-align: center;
+            }
         }
-
     }
-`
+
+    @media (max-width: 1200px) {
+        .main-cards {
+            .cards {
+                grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            }
+            .card {
+                max-width: 375px;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+
+        .main-cards {
+            padding: 0 16px;
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .card {
+                max-width: 50%;
+                margin: 0 auto;
+                align-items: center;
+            }
+        }
+    }
+`;

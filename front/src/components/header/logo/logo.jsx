@@ -10,4 +10,7 @@ export const Logo = styled(LogoContainer)`
     display: flex;
     align-items: center;
     height: 100%;
+    @media (max-width: 768px){
+    display: none;
+}
 `

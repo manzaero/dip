@@ -324,6 +324,10 @@ export const AdminPanel = styled(AdminPanelContainer)`
         width: 100%;
         padding: 4px 20px;
     }
+    
+    tbody tr {
+        border-bottom: 1px solid #ddd;
+    }
 
     input {
         appearance: none;
@@ -368,8 +372,9 @@ export const AdminPanel = styled(AdminPanelContainer)`
         padding: 5px;
         margin-bottom: -1px;
         text-align: left;
-        border-bottom: 1px solid #ddd;
     }
+    
+    
 
     .product-info {
         display: flex;
@@ -457,6 +462,92 @@ export const AdminPanel = styled(AdminPanelContainer)`
     input {
         height: 45px;
     }
+    @media (max-width: 1200px) {
+        .add-product-form {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
 
+            select {
+                width: 100%;
+            }
+
+            input {
+                width: 100%;
+            }
+
+            button {
+                grid-column: span 2;
+                justify-self: start;
+            }
+        }
+
+        .cart-table th,
+        .cart-table td {
+            font-size: 14px;
+            padding: 8px;
+        }
+
+        .product-info {
+            flex-direction: column;
+            align-items: flex-start;
+
+            img {
+                margin-bottom: 8px;
+            }
+        }
+
+        .btn-save {
+            justify-content: flex-start;
+            flex-direction: column;
+            height: auto;
+            gap: 12px;
+        }
+
+        input {
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .cart-table {
+            display: block;
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        .cart-table thead {
+            display: none;
+        }
+
+        .cart-table tbody {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .cart-table tbody tr {
+            display: flex;
+            flex-direction: column;
+            width: 95%;
+            max-width: 600px;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            padding: 16px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+            background: #fff;
+        }
+
+        .cart-table td {
+            border-bottom: none;
+            padding: 8px 0;
+            width: 100%;
+        }
+        .btn-save {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+    }
 
 `

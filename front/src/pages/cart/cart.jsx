@@ -221,4 +221,77 @@ export const Cart = styled(CartContainer)`
         font-size: 14px;
         font-weight: 600;
     }
+    @media (max-width: 1200px) {
+        .product-cart {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .product-total {
+            margin-left: 0;
+            margin-top: 40px;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .btn-container {
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .btn-container button {
+            flex: 1;
+            max-width: 100%;
+        }
+
+        .product {
+            margin-right: 20px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .product-cart {
+            flex-direction: column;
+            padding: 0 10px;
+        }
+
+
+        table {
+            min-width: 600px;
+        }
+
+        .product-total {
+            margin: 40px auto 0 auto;
+            width: 100%;
+            padding: 0 10px;
+        }
+
+        .cart-total {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .btn-container {
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .btn-container button {
+            width: 100%;
+        }
+
+        .product {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .product img {
+            margin: 0 0 10px 0;
+        }
+    }
+
 `

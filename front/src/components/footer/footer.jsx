@@ -10,4 +10,6 @@ const FooterContainer = ({className}) => {
 }
 export const Footer = styled(FooterContainer)`
     border-bottom: 1px solid #46A35833;
+    display: grid;
+    
 `
