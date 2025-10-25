@@ -1,3 +1,20 @@
+#FROM node:22
+#
+#WORKDIR /usr/src/app
+#
+#COPY . .
+#
+#WORKDIR /usr/src/app/front
+#RUN npm i
+#RUN npm run build
+#
+#WORKDIR /usr/src/app/back
+#RUN npm i
+#
+#EXPOSE 3001
+#
+#CMD ["node", "app.js"]
+
 FROM node:22
 
 WORKDIR /usr/src/app
@@ -5,12 +22,13 @@ WORKDIR /usr/src/app
 COPY . .
 
 WORKDIR /usr/src/app/front
-RUN npm i
+RUN npm install
 RUN npm run build
 
 WORKDIR /usr/src/app/back
-RUN npm i
+RUN npm install
 
+ENV PORT=3001
 EXPOSE 3001
 
 CMD ["node", "app.js"]
